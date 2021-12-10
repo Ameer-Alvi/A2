@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Use os JS</title>
+
+  <style>
+    body{
+      background: radial-gradient(#fff,purple);
+    }
+    .container{
+      display:flex;
+      text-align: center;
+      justify-content: center;
+      margin: 15px 20px;
+      flex-wrap: wrap;
+    }
+    .sec{
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: 20px 25px;
+      padding: 2px 7px;
+      background-color:rgb(0, 128, 128);
+color:white;
+      border-radius: 10px;
+    }
+    
+    .sec p{
+      font-size: 20px;
+    }
+    .btn{
+      display: block;
+      width: 130px;
+      margin: 10px auto;
+      border-radius: 10px;
+      padding: 5px 8px;
+      cursor: pointer;
+      border: none;
+      background-color: rgb(122, 113, 113);
+      color: #fff;
+    }
+
+    .btn:hover{
+      background-color:#ff523b ;
+      color: white;
+    }
+ #editor1 {
+          border: 3px inset grey;
+          height: 100px;
+          width: 381px;
+          margin: 10px auto 0;
+         }
+        fieldset {
+          margin: 2px auto 15px;
+          width: 358px;
+        }
+        button {
+          width: 5ex;
+          text-align: center;
+          padding: 1px 3px;
+        }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="sec">
+
+      <p id="ads">Click below button to change text into bold</p>
+
+      <button type="button" onclick="document.getElementById('ads').innerHTML='<b>Click below button to change text into bold</b>'" class="btn">Click below button to change text into <b>Bold</b></button>
+
+      <button type="button" onclick="document.getElementById('ads').innerHTML='Click below button to change text into bold'" class="btn">Click to view previous text</button>
+
+    </div>
+
+    <div class="sec">
+
+      <p id="itelic">Click below button to change text into italics</p>
+
+      <button type="button" onclick="document.getElementById('itelic').innerHTML='<i>Click below button to change text into italics</i>'" class="btn">Click below button to change text into <i>Italics</i>
+      </button>
+
+      <button type="button" onclick="document.getElementById('itelic').innerHTML='Click below button to change text into italics'" class="btn">Click to view previous text
+      </button>
+
+    </div>
+
+    <div class="sec">
+
+      <p id="underline">Click below button to underline text</p>
+
+      <button type="button" onclick="document.getElementById('underline').innerHTML='<u>Click below button to underline text</u>'"  class="btn">Click below button to <u>underline</u> text
+      </button>
+
+      <button type="button" onclick="document.getElementById('underline').innerHTML='Click below button to underline text'" class="btn">Click to view previous text
+      </button>
+
+    </div>
+
+
+ <script type="text/javascript">
+        function boldText(){
+            var target = document.getElementById("TextArea");
+            if( target.style.fontWeight == "bolder" ) {
+                target.style.fontWeight = "normal";
+            } else {
+                target.style.fontWeight = "bolder";
+            }
+        }
+        
+        
+        
+        function italicText(){
+            var target = document.getElementById("TextArea");
+            if( target.style.fontStyle == "italic" ) {
+                target.style.fontStyle = "normal";
+            } else {
+                target.style.fontStyle = "italic";
+            }
+        }
+        
+        function underlineText(){
+            var target = document.getElementById("TextArea");
+            if( target.style.textDecoration == "underline" ) {
+                target.style.textDecoration = "none";
+            } else {
+                target.style.textDecoration = "underline";
+            }
+        }
+        </script>
+<center>
+
+<div id="editor1" contenteditable="true">
+    
+ </div>
+ <fieldset>
+   <button class="fontStyle" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"><i>I</i>
+   </button>
+   <button class="fontStyle" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"><b>B</b>
+   </button>
+   <button class="fontStyle" onclick="document.execCommand( 'underline',false,null);"><u>U</u>
+   </button>
+ </fieldset>
+
+</center>
+
+</body>
+
+</html>
